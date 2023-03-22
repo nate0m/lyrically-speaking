@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form method="POST" action="{{ url_for('calculate_lexical_density') }}">
+            <h1>Song Input</h1>
+            Song 1: <input type="text" name="song1"><br>
+            Artist 1: <input type="text" name="artist1"><br>
+            Song 2: <input type="text" name="song2"><br>
+            Artist 2: <input type="text" name="artist2"><br>
+            <input type="submit" value="Calculate LD">
+        </form>
+    </body>
+</html>

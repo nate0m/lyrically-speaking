@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Song Lyrics Analyzer</title>
+    <style>
+        img { width: 280px ; }
+    </style>
+</head>
+<body>
+    <h1>Song Lyics Analyzer Results</h1>
+    <table>
+        <tr>
+            <th></th>
+            <th>{{ artist1 }}</th>
+            <th>{{ artist2 }}</th>
+        </tr>
+        <tr>
+            <th></th>
+            <th>{{ song1 }}</th>
+            <th>{{ song2 }}</th>
+        </tr>
+        <tr>
+            <th></th>
+            <th><img src="{{ song1_art }}"></th>
+            <th><img src="{{ song2_art }}"></th>
+        </tr>
+        <tr>
+            <td>Type-Token Ratio(TTR)</td>
+            <!-- rounds float variable to 2 decimal place (.00) than mulitples by 100 -->
+            <td>{{ ttr1|round(2, 'floor')*100 }}</td>
+            <td>{{ ttr2|round(2, 'floor')*100 }}</td>
+        </tr>
+        <tr>
+            <td>Vocd</td>
+            <!-- rounds float variable to 2 deciaml places (.00) -->
+            <td>{{ vocd1|round(2, 'floor') }}</td>
+            <td>{{ vocd2|round(2, 'floor') }}</td>
+        </tr>
+        <tr>
+            <td>Moving Average TTR</td>
+            <td>{{ mattr1|round(2, 'floor')*100 }}</td>
+            <td>{{ mattr2|round(2, 'floor')*100 }}</td>
+        </tr>
+        <tr>
+            <td>Annotations</td>
+            <td>{{ a1 }}</td>
+            <td>{{ a2 }}</td>
+        </tr>
+        </tr>
+    </table>
+    <form action="{{ url_for('calculate_lexical_density') }}" method="get">
+        <button type="submit">Try More Songs!</button>
+    </form>
+</body>
+</html>
+
